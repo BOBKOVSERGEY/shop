@@ -2,8 +2,12 @@
 
 class ProductController
 {
-    public function actionView($id)
+    public function actionView($productId)
     {
+        $categories = [];
+        $categories = Category::getCategoriesList();
+
+        $product = Product::getProductById($productId);
 
         require_once ROOT . '/views/product/view.php';
 

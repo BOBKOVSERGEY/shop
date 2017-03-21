@@ -15,4 +15,17 @@ class CatalogController
 
         return true;
     }
+
+    public function actionCategory($categoryId)
+    {
+        $categories = [];
+        $categories = Category::getCategoriesList();
+
+        $categoryProducts = [];
+        $categoryProducts = Product::getProductsListByCategory($categoryId);
+
+        require_once ROOT . '/views/catalog/category.php';
+
+        return true;
+    }
 }
