@@ -1,7 +1,7 @@
 <?php
 
 
-class SiteController
+class CatalogController
 {
     public function actionIndex()
     {
@@ -9,9 +9,9 @@ class SiteController
         $categories = Category::getCategoriesList();
 
         $latestProducts = [];
-        $latestProducts = Product::getLatestProduct(3);
+        $latestProducts = Product::getLatestProduct(12);
 
-        require_once ROOT . '/views/site/index.php';
+        require_once ROOT . '/views/catalog/index.php';
 
         return true;
     }
