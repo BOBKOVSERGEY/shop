@@ -8,6 +8,8 @@ function __autoload($class)
     }
     elseif(file_exists(__DIR__ . '/models/' . $class . '.php')) {
         require __DIR__ . '/models/' . $class . '.php';
+    } elseif(file_exists(__DIR__ . '/components/' . $class . '.php')) {
+        require __DIR__ . '/components/' . $class . '.php';
     } else {
         $classParts = explode('\\', $class);
         $classParts[0] = __DIR__;
