@@ -7,6 +7,7 @@ class UserController
         $name = '';
         $email = '';
         $password = '';
+        $result = false;
 
         if (isset($_POST['submit'])) {
             $name = $_POST['name'];
@@ -15,23 +16,26 @@ class UserController
 
             $errors = false;
 
-            if (USER::checkName($name)) {
-                echo '<br>$name ok!';
-            } else {
+            if (!User::checkName($name)) {
                 $errors[] = 'Имя не должно быть короче 2-х символов';
             }
 
-            if (USER::checkEmail($email)) {
-                echo '<br>$email ok!';
-            } else {
+            if (!User::checkEmail($email)) {
                 $errors[] = 'Неправильный email';
             }
 
-            if (USER::checkPassword($password)) {
-                echo '<br>$password ok!';
-            } else {
-                $errors[] = 'Пароль не должно быть короче 6-ти символов';
+            if (!User::checkPassword($password)) {
+                $errors[] = 'Пароль не должен быть короче 6-ти символов';
             }
+
+            if (User::checkEmailExists($email)) {
+                $errors[] = 'Такой email уже используется';
+            }
+
+            if ($errors == false) {
+                $result = User::register($name, $email, $password);
+            }
+
         }
 
 

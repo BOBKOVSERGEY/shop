@@ -3,7 +3,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-4">
-
+                    <?php if ($result) :?>
+                        <p>Вы зарегистрированы!</p>
+                    <?php else: ?>
                     <?php if (isset($errors) && is_array($errors)) :?>
                         <ul>
                             <?php foreach($errors as $error) :?>
@@ -21,6 +23,7 @@
                             <button type="submit" name="submit" value="Регистрация" class="btn btn-default">Регистрация</button>
                         </form>
                     </div><!--/sign up form-->
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
