@@ -6,13 +6,12 @@
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 
-require_once __DIR__ . '/components/autoload.php';
-
+session_start();
 
 
 // 2. Подключение файлов системы
 define('ROOT', dirname(__FILE__));
-
+require_once __DIR__ . '/components/autoload.php';
 
 
 // 4. Вызов Router
