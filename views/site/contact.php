@@ -27,7 +27,7 @@
                                 <input type="text" name="userSubject" class="form-control" value="<?php echo $userSubject; ?>" placeholder="Тема письма">
                             </div>
                             <div class="form-group col-md-12">
-                                <textarea name="userMessage" id="userMessage" class="form-control" rows="8" value="<?php echo $userMessage; ?>" placeholder="Введите ваше сообщение"></textarea>
+                                <textarea name="userMessage" id="userMessage" class="form-control" rows="8" placeholder="Введите ваше сообщение"><?php echo $userMessage; ?></textarea>
                             </div>
                             <div class="form-group col-md-12">
                                 <input type="submit" name="submit" class="btn btn-primary pull-right" value="Отправить">

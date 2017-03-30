@@ -91,6 +91,7 @@ class Product
      */
     public static function getProductsByIds($idsArray)
     {
+        $title = '';
         $products = [];
 
         $db = Db::getConnection();
@@ -115,6 +116,33 @@ class Product
         }
 
         return $products;
+    }
+
+    /**
+     * Возвращает список рекомендуемых товаров
+     * @return array <p>Массив с товарами</p>
+     */
+    public static function getRecommendedProducts()
+    {
+        // соединение с БД
+        $db = Db::getConnection();
+
+        // Получение и возврат результатов
+        $result = $db->query('SELECT id, name, price, image, is_new FROM product '
+                . 'WHERE status = "1" AND is_recommended = "1" '
+                . 'ORDER BY id DESC');
+
+        $i = 0;
+        $productsList = [];
+        while ($row = $result->fetch()) {
+            $productsList[$i]['id'] = $row['id'];
+            $productsList[$i]['name'] = $row['name'];
+            $productsList[$i]['price'] = $row['price'];
+            $productsList[$i]['image'] = $row['image'];
+            $productsList[$i]['is_new'] = $row['is_new'];
+            $i++;
+        }
+        return $productsList;
     }
 }
 

@@ -59,20 +59,25 @@
                                     <p class="cart_total_price">$<?php echo $product['price'] * $productsInCart[$product['id']]; ?></p>
                                 </td>
                                 <td class="cart_delete">
-                                    <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+                                    <a class="cart_quantity_delete" href="/cart/delete/<?php echo $product['id']; ?>"><i class="fa fa-times"></i></a>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
-                            <tr>
-                                <td class="cart_total" colspan="4"><h4>Общая стоимость: </h4></td>
-                                <td class="cart_total"><p class="cart_total_price">$<?php echo $totalPrice; ?></p></td>
-                            </tr>
-
                             </tbody>
                         </table>
                       </div>
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <h4>Общая стоимость: </h4>
+                            </div>
+                            <div class="col-sm-3 text-right">
+                                <div class="cart_total_price_my">$<?php echo $totalPrice; ?></div>
+                            </div>
+                        </div>
+                        <a class="btn btn-default checkout" href="/cart/checkout"><i class="fa fa-shopping-cart"></i> Оформить заказ</a>
                     <?php else : ?>
                     <p>Корзина пуста</p>
+                        <a class="btn btn-default checkout" href="/"><i class="fa fa-shopping-cart"></i> Вернуться к покупкам</a>
                     <?php endif; ?>
                     </div>
                </div>

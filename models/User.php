@@ -101,6 +101,18 @@ class User
     }
 
     /**
+     * Проверяет телефон: не меньше, чем 10 символов
+     */
+    public static function checkPhone($phone)
+    {
+        if (strlen($phone) >= 10) {
+            return true;
+        }
+        return false;
+    }
+
+
+    /**
      * Проверяем имя: не меньше чем 2 символа
      */
     public static function checkPassword($password)

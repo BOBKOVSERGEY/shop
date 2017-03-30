@@ -1631,7 +1631,7 @@ h2.title {
 
 .cart_product {
   display: block;
-  margin: 15px -70px 10px 25px;
+  margin: 15px 0px 10px 25px;
 }
 
 .cart_quantity_button a {
@@ -1659,7 +1659,6 @@ h2.title {
 
 .cart_delete  {
   display: block;
-  margin-right: -12px;
   overflow: hidden;
 }
 
@@ -2523,4 +2522,20 @@ h2.title {
   color: #FE980F;
 }
 
+.cart_total_price_my {
+  font-size: 22px;
+  color: #FE980F;
+}
+.recommended_items .product-image-wrapper
+{
+  height: auto;
+}
+.recommended_items .item
+{
+  padding: 0 50px;
+}
+.recommended_items
+{
+  position: relative;
+}
 
