@@ -1,6 +1,6 @@
 <?php include ROOT . '/views/layouts/header_admin.php'; ?>
     <section>
-        <div class="container">
+        <div class="container admin-content">
             <div class="row">
                 <h4>Добрый день, администратор!</h4>
                 <p>Вам доступны такие возможности:</p>

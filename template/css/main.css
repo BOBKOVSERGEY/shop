@@ -1532,6 +1532,7 @@ h2.title {
 
 .breadcrumbs {
   position: relative;
+  margin-top: 20px;
 }
 
 .breadcrumbs .breadcrumb {
@@ -1555,7 +1556,7 @@ h2.title {
   border-color:transparent transparent transparent #FE980F;
   position: absolute;
   top: 11px;
-  left:48px;
+  margin-left: 5px;
 
 }
 
@@ -2538,4 +2539,20 @@ h2.title {
 {
   position: relative;
 }
-
+.list-product-edit, .list-product-delete {
+  text-align: center;
+}
+.list-product-menu {
+  text-align: center;
+  background: #FE980F;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 0;
+}
+.admin-content{
+  min-height: 900px;
+}
+.contact-form p{
+  margin-top: 10px;
+  color: #000;
+}
