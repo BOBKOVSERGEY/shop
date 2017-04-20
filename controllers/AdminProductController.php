@@ -118,7 +118,7 @@ class AdminProductController extends AdminBase
                 if (is_uploaded_file($_FILES["image"]["tmp_name"])) {
 
                     // Если загружалось, переместим его в нужную папке, дадим новое имя
-                    move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "/upload/images/products/{$id}.jpg");
+                    move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "/template/images/{$_FILES["image"]["name"]}");
                 }
             }
 
